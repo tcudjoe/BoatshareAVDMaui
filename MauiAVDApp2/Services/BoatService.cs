@@ -14,7 +14,7 @@ namespace MauiAVDApp2.Services
 
         public BoatService()
         {
-
+            SetupDb();
         }
 
         private async void SetupDb()

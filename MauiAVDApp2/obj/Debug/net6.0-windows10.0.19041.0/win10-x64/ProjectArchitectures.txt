@@ -1,1 +1,0 @@
-C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\MauiAVDApp2.csproj;x64
