@@ -4,7 +4,7 @@
 @inject IBoatService boatService
 
 <h1>Welcome to Boatshare!</h1>
-<small>Here are a list of all available boats.</small>
+<small class="mb-3">Here are a list of all available boats.</small>
 
 @if (boats == null)
 {
@@ -12,36 +12,29 @@
 }
 else
 {
-    <table class="table table-striped">
-        <thead>
-            <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Description</th>
-                <th scope="col">City</th>
-                <th scope="col">Type</th>
-                <th scope="col">Manufacturer</th>
-                <th scope="col">Model</th>
-                <th scope="col">Seats</th>
-                <th scope="col">Price</th>
-            </tr>
-        </thead>
-        <tbody>
+    <div class="container">
+        <div class="row">
             @foreach (var boat in boats)
             {
-                <tr>
-                    <th scope="row">1</th>
-                    <td>@boat.BoatName</td>
-                    <td>@boat.BoatDescription</td>
-                    <td>@boat.BoatCity</td>
-                    <td>@boat.BoatType.ToString()</td>
-                    <td>@boat.BoatManufacturer</td>
-                    <td>@boat.BoatModel</td>
-                    <td>@boat.BoatSeats</td>
-                    <td>@boat.BoatPrice</td>
-                </tr>
+                <a class="mb-3" style="text-decoration: none;" href="/boats/@boat.BoatId">
+                    <div class="col-12">
+                        <div class="card">
+                            <img src="@boat.BoatImage" style="float:left" class="card-img-top" alt="@boat.BoatName">
+                            <div class="card-body" style="float: right">
+                                <h5 class="card-title mb-3">@boat.BoatName</h5>
+                                <p class="card-text">@boat.BoatType.ToString()</p>
+                                <p class="card-text">
+                                    <i class="fa-solid fa-location-dot"></i>@boat.BoatCity
+                                    <i class="fa-solid fa-users"></i>@boat.BoatSeats
+                                    <i class="fa-solid fa-euro-sign"></i>@boat.BoatPrice
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
             }
-        </tbody>
-    </table>
+        </div>
+    </div>
 }
 
 
