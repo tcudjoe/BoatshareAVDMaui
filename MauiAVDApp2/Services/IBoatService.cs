@@ -9,7 +9,7 @@ namespace MauiAVDApp2.Services
 {
     internal interface IBoatService
     {
-        Task<List<Boat>> GetBoatListAsync(Boat boat);
+        Task<List<Boat>> GetAllBoats();
         Task<int> AddBoat(Boat boat);
         Task<int> UpdateBoat(Boat boat);
         Task<int> DeleteBoat(Boat boat);

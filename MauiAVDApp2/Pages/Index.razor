@@ -1,7 +1,48 @@
 ﻿@page "/"
+@using MauiAVDApp2.Services
+@using MauiAVDApp2.Models
+@inject IBoatService boatService
 
-<h1>Hello, world!</h1>
+<h1>Welcome to Boatshare!</h1>
+<small class="mb-3">Here are a list of all available boats.</small>
 
-Welcome to your new app.
+@if (boats == null)
+{
+    <p><em>Loading boats...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            @foreach (var boat in boats)
+            {
+                <a class="mb-3" style="text-decoration: none;" href="/boats/@boat.BoatId">
+                    <div class="col-12">
+                        <div class="card">
+                            <img src="@boat.BoatImage" style="float:left" class="card-img-top" alt="@boat.BoatName">
+                            <div class="card-body" style="float: right">
+                                <h5 class="card-title mb-3">@boat.BoatName</h5>
+                                <p class="card-text">@boat.BoatType.ToString()</p>
+                                <p class="card-text">
+                                    <i class="fa-solid fa-location-dot"></i>@boat.BoatCity
+                                    <i class="fa-solid fa-users"></i>@boat.BoatSeats
+                                    <i class="fa-solid fa-euro-sign"></i>@boat.BoatPrice
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            }
+        </div>
+    </div>
+}
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+@code {
+    private List<Boat> boats;
+
+    protected override async Task OnInitializedAsync()
+    {
+        boats = await boatService.GetAllBoats();
+    }
+}
