@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\MauiAVDApp2.props" />
+</Project>
