@@ -36,15 +36,15 @@ namespace MauiAVDApp2.Services
             return await _dbConnection.DeleteAsync(boat);
         }
 
-        public async Task<List<Boat>> GetBoatListAsync(Boat boat)
-        {
-            var boatList = await _dbConnection.Table<Boat>().ToListAsync();
-            return boatList;
-        }
-
         public async Task<int> UpdateBoat(Boat boat)
         {
             return await _dbConnection.UpdateAsync(boat);
+        }
+
+        public async Task<List<Boat>> GetAllBoats()
+        {
+            var boatList = await _dbConnection.Table<Boat>().ToListAsync();
+            return boatList;
         }
     }
 }

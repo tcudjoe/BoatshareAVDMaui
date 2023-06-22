@@ -1,5 +1,55 @@
 ﻿@page "/"
+@using MauiAVDApp2.Services
+@using MauiAVDApp2.Models
+@inject IBoatService boatService
 
-<h1>Hello, world!</h1>
+<h1>Welcome to Boatshare!</h1>
+<small>Here are a list of all available boats.</small>
 
-Welcome to your new app.
+@if (boats == null)
+{
+    <p><em>Loading boats...</em></p>
+}
+else
+{
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Description</th>
+                <th scope="col">City</th>
+                <th scope="col">Type</th>
+                <th scope="col">Manufacturer</th>
+                <th scope="col">Model</th>
+                <th scope="col">Seats</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var boat in boats)
+            {
+                <tr>
+                    <th scope="row">1</th>
+                    <td>@boat.BoatName</td>
+                    <td>@boat.BoatDescription</td>
+                    <td>@boat.BoatCity</td>
+                    <td>@boat.BoatType.ToString()</td>
+                    <td>@boat.BoatManufacturer</td>
+                    <td>@boat.BoatModel</td>
+                    <td>@boat.BoatSeats</td>
+                    <td>@boat.BoatPrice</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private List<Boat> boats;
+
+    protected override async Task OnInitializedAsync()
+    {
+        boats = await boatService.GetAllBoats();
+    }
+}

@@ -81,10 +81,11 @@
         var response = await boatService.AddBoat(boat);
         if (response > 0)
         {
-            boat.BoatSeats = 0;
-            boat.BoatPrice = 0.00;
+            boat.BoatSeats = 3;
+            boat.BoatPrice = 3.00;
             boat.BoatWithLicense = boat.BoatWithSkipper = false;
             boat.BoatCity = boat.BoatManufacturer = boat.BoatImage = boat.BoatDescription = boat.BoatModel = boat.BoatName = string.Empty;
+            this.StateHasChanged();
             await App.Current.MainPage.DisplayAlert("form submit invoked", "form submitted", "OK");
         }
         else
