@@ -24,9 +24,9 @@
         ],
         "originalTargetFrameworks": [
           "net6.0-android",
-          "net6.0-ios",
           "net6.0-maccatalyst",
-          "net6.0-windows10.0.19041.0"
+          "net6.0-windows10.0.19041.0",
+          "net7.0-ios"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
@@ -38,16 +38,16 @@
             "targetAlias": "net6.0-android",
             "projectReferences": {}
           },
-          "net6.0-ios16.1": {
-            "targetAlias": "net6.0-ios",
-            "projectReferences": {}
-          },
           "net6.0-maccatalyst16.1": {
             "targetAlias": "net6.0-maccatalyst",
             "projectReferences": {}
           },
           "net6.0-windows10.0.19041": {
             "targetAlias": "net6.0-windows10.0.19041.0",
+            "projectReferences": {}
+          },
+          "net7.0-ios16.1": {
+            "targetAlias": "net7.0-ios",
             "projectReferences": {}
           }
         },
@@ -66,6 +66,10 @@
               "version": "[6.0.553, )",
               "autoReferenced": true
             },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.553, )",
@@ -75,6 +79,10 @@
               "target": "Package",
               "version": "[6.0.553, )",
               "autoReferenced": true
+            },
+            "Microsoft.Maui.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
             },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
@@ -185,114 +193,6 @@
           },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
         },
-        "net6.0-ios16.1": {
-          "targetAlias": "net6.0-ios",
-          "dependencies": {
-            "Microsoft.AspNetCore.Components.WebView.Maui": {
-              "target": "Package",
-              "version": "[6.0.553, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Maui.Dependencies": {
-              "target": "Package",
-              "version": "[6.0.553, )",
-              "autoReferenced": true
-            },
-            "Microsoft.Maui.Extensions": {
-              "target": "Package",
-              "version": "[6.0.553, )",
-              "autoReferenced": true
-            },
-            "SQLitePCLRaw.bundle_green": {
-              "target": "Package",
-              "version": "[2.1.5, )"
-            },
-            "SQLitePCLRaw.core": {
-              "target": "Package",
-              "version": "[2.1.5, )"
-            },
-            "SQLitePCLRaw.provider.dynamic_cdecl": {
-              "target": "Package",
-              "version": "[2.1.5, )"
-            },
-            "SQLitePCLRaw.provider.sqlite3": {
-              "target": "Package",
-              "version": "[2.1.5, )"
-            },
-            "System.Runtime.InteropServices.NFloat.Internal": {
-              "target": "Package",
-              "version": "[6.0.1, )",
-              "autoReferenced": true
-            },
-            "sqlite-net-pcl": {
-              "target": "Package",
-              "version": "[1.8.116, )"
-            }
-          },
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48",
-            "net481"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.iOS.Ref",
-              "version": "[16.4.60, 16.4.60]"
-            },
-            {
-              "name": "Microsoft.iOS.Runtime.iossimulator-x64",
-              "version": "[16.4.60, 16.4.60]"
-            },
-            {
-              "name": "Microsoft.Maui.Controls.Ref.ios",
-              "version": "[6.0.553, 6.0.553]"
-            },
-            {
-              "name": "Microsoft.Maui.Controls.Runtime.ios",
-              "version": "[6.0.553, 6.0.553]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Ref.ios",
-              "version": "[6.0.553, 6.0.553]"
-            },
-            {
-              "name": "Microsoft.Maui.Core.Runtime.ios",
-              "version": "[6.0.553, 6.0.553]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Ref.ios",
-              "version": "[6.0.553, 6.0.553]"
-            },
-            {
-              "name": "Microsoft.Maui.Essentials.Runtime.ios",
-              "version": "[6.0.553, 6.0.553]"
-            }
-          ],
-          "frameworkReferences": {
-            "Microsoft.iOS": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Controls": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Core": {
-              "privateAssets": "all"
-            },
-            "Microsoft.Maui.Essentials": {
-              "privateAssets": "all"
-            },
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
-        },
         "net6.0-maccatalyst16.1": {
           "targetAlias": "net6.0-maccatalyst",
           "dependencies": {
@@ -301,6 +201,10 @@
               "version": "[6.0.553, )",
               "autoReferenced": true
             },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.553, )",
@@ -310,6 +214,10 @@
               "target": "Package",
               "version": "[6.0.553, )",
               "autoReferenced": true
+            },
+            "Microsoft.Maui.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
             },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
@@ -410,6 +318,10 @@
               "version": "[6.0.553, )",
               "autoReferenced": true
             },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
+            },
             "Microsoft.Maui.Dependencies": {
               "target": "Package",
               "version": "[6.0.553, )",
@@ -419,6 +331,10 @@
               "target": "Package",
               "version": "[6.0.553, )",
               "autoReferenced": true
+            },
+            "Microsoft.Maui.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
             },
             "SQLitePCLRaw.bundle_green": {
               "target": "Package",
@@ -508,6 +424,102 @@
               "privateAssets": "all"
             },
             "Microsoft.Windows.SDK.NET.Ref": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+        },
+        "net7.0-ios16.1": {
+          "targetAlias": "net7.0-ios",
+          "dependencies": {
+            "CommunityToolkit.Maui.Maps": {
+              "target": "Package",
+              "version": "[1.0.2, )"
+            },
+            "Microsoft.AspNetCore.Components.WebView.Maui": {
+              "target": "Package",
+              "version": "[7.0.86, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[7.0.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Maui.Controls.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
+            },
+            "Microsoft.Maui.Graphics": {
+              "target": "Package",
+              "version": "[7.0.86, )",
+              "autoReferenced": true
+            },
+            "Microsoft.Maui.Maps": {
+              "target": "Package",
+              "version": "[7.0.86, )"
+            },
+            "SQLitePCLRaw.bundle_green": {
+              "target": "Package",
+              "version": "[2.1.5, )"
+            },
+            "SQLitePCLRaw.core": {
+              "target": "Package",
+              "version": "[2.1.5, )"
+            },
+            "SQLitePCLRaw.provider.dynamic_cdecl": {
+              "target": "Package",
+              "version": "[2.1.5, )"
+            },
+            "SQLitePCLRaw.provider.sqlite3": {
+              "target": "Package",
+              "version": "[2.1.5, )"
+            },
+            "sqlite-net-pcl": {
+              "target": "Package",
+              "version": "[1.8.116, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.iOS": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Maui.Controls": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Maui.Core": {
+              "privateAssets": "all"
+            },
+            "Microsoft.Maui.Essentials": {
+              "privateAssets": "all"
+            },
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },

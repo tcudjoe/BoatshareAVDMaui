@@ -1,0 +1,73 @@
+﻿@page "/boat/{BoatId:int}"
+@using MauiAVDApp2.Models
+@using MauiAVDApp2.Services
+@inject IBoatService boatService
+
+<h3>BoatDetails</h3>
+
+@if (boat == null)
+{
+    <p><em>Loading boat...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <div class="">
+                    <img src="@boat.BoatImage" style="width: 100%; height: 300px; object-fit:cover; object-position: 50% 50%;" class="card-img-top" alt="@boat.BoatName">
+                    <div class="">
+                        <h5 class=" mb-3">@boat.BoatName</h5>
+                        <p>@boat.BoatType.ToString()</p>
+                        <p>
+                            <i class="fa-solid fa-location-dot"></i>@boat.BoatCity
+                            <br>
+                            <i class="fa-solid fa-users"></i>@boat.BoatSeats
+                            <br>
+                            <i class="fa-solid fa-euro-sign"></i>@boat.BoatPrice
+                        </p>
+                    </div>
+                </div>
+
+                <div>
+                    <h6>Location: @boat.BoatCity</h6>
+                    <iframe allowfullscreen
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="@getMapUrl()"
+                            style="border:0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+@code {
+    Boat boat;
+
+    [Parameter]
+    public int BoatId { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Retrieve the boat information based on the provided id
+        boat = await boatService.GetBoatById(BoatId);
+    }
+
+    string getMapUrl()
+    {
+        // Replace with your logic to generate the map URL
+        // You can use the boat's latitude and longitude to generate the URL
+        // For example:
+        double latitude = boat.BoatLatitude;
+        double longitude = boat.BoatLongitude;
+        string city = boat.BoatCity;
+        string apiKey = "AIzaSyCT7Drg7-0cLPWId5AErlvqztMxocDx6UM";
+
+        // Construct the map URL using the latitude, longitude, and API key
+        string mapUrl = $"https://www.google.com/maps/embed/v1/place?key={apiKey}&q={city},{latitude},{longitude}";
+
+        return mapUrl;
+    }
+}

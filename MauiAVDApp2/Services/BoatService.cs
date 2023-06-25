@@ -46,5 +46,11 @@ namespace MauiAVDApp2.Services
             var boatList = await _dbConnection.Table<Boat>().ToListAsync();
             return boatList;
         }
+
+        public async Task<Boat> GetBoatById(int boatId)
+        {
+            var boat = await _dbConnection.QueryAsync<Boat>($"Select * From {nameof(Boat)} where BoatId = {boatId}");
+            return boat.FirstOrDefault();
+        }
     }
 }

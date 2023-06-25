@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>net6.0-android;net6.0-maccatalyst;net7.0-ios</TargetFrameworks>
         <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
         <!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
         <!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
@@ -50,6 +50,12 @@
     </ItemGroup>
 
     <ItemGroup>
+      <Content Remove="Pages\BoatDetails.razor.razor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.Maui.Controls.Maps" Version="7.0.86" />
+      <PackageReference Include="Microsoft.Maui.Maps" Version="7.0.86" />
       <PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
       <PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.5" />
       <PackageReference Include="SQLitePCLRaw.core" Version="2.1.5" />
@@ -59,6 +65,27 @@
 
     <ItemGroup>
       <Folder Include="Data\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Pages\Views\MapPage.xaml.cs">
+        <DependentUpon>MapPage.xaml</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <MauiXaml Update="Pages\Views\BoatDetail.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+      <MauiXaml Update="Pages\Views\MapPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </MauiXaml>
+    </ItemGroup>
+
+    <ItemGroup Condition="'$(TargetFramework)' == 'net7.0-ios'">
+      <PackageReference Include="CommunityToolkit.Maui.Maps">
+        <Version>1.0.2</Version>
+      </PackageReference>
     </ItemGroup>
 
 </Project>

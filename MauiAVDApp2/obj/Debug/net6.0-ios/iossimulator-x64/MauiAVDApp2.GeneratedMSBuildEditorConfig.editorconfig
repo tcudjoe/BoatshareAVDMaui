@@ -30,6 +30,20 @@ build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/TAOC/source/repos/MauiAVDApp2/MauiAVDApp2/Pages/Views/BoatDetail.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiAVDApp2.Pages.Views.BoatDetail.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Views\BoatDetail.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Views\BoatDetail.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TAOC/source/repos/MauiAVDApp2/MauiAVDApp2/Pages/Views/MapPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = MauiAVDApp2.Pages.Views.MapPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Views\MapPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Views\MapPage.xaml
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TAOC/source/repos/MauiAVDApp2/MauiAVDApp2/Main.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
@@ -44,6 +58,13 @@ build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkQm9hdC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/TAOC/source/repos/MauiAVDApp2/MauiAVDApp2/Pages/BoatDetails.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQm9hdERldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/TAOC/source/repos/MauiAVDApp2/MauiAVDApp2/Pages/BoatOverview.razor]
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
@@ -55,6 +76,13 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.GenKind = 
 build_metadata.AdditionalFiles.ManifestResourceName = 
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.RelativePath = 
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/TAOC/source/repos/MauiAVDApp2/MauiAVDApp2/Pages/UpdateBoat.razor]
+build_metadata.AdditionalFiles.GenKind = 
+build_metadata.AdditionalFiles.ManifestResourceName = 
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXBkYXRlQm9hdC5yYXpvcg==
 build_metadata.AdditionalFiles.RelativePath = 
 build_metadata.AdditionalFiles.CssScope = 
 
