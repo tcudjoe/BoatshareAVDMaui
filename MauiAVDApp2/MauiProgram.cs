@@ -22,6 +22,8 @@ public static class MauiProgram
 #endif
         builder.Services.AddSingleton<IBoatService, BoatService>();
         builder.Services.AddSingleton<IGeocodingService, GeocodingService>();
+        builder.Services.AddScoped<IGeocodingService, GeocodingService>();
+
 
         return builder.Build();
     }

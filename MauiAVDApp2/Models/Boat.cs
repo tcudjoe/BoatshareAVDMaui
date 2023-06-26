@@ -25,6 +25,5 @@ namespace MauiAVDApp2.Models
         public double BoatLatitude { get; set; }
         public double BoatLongitude { get; set; }
         public double? BoatDistance { get; set; }
-        //public Host BoatHost { get; set; }
     }
 }

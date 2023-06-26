@@ -1,0 +1,11 @@
+﻿@page "/map"
+@using MauiAVDApp2.Models
+
+<h3>Map Overview</h3>
+
+<div id="mapContainer"></div>
+
+@code {
+    [Parameter]
+    public List<Boat> Boats { get; set; }
+}

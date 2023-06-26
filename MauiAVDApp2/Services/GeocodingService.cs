@@ -1,9 +1,8 @@
-﻿using MauiAVDApp2.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using MauiAVDApp2.Models;
 
 namespace MauiAVDApp2.Services
 {
@@ -13,18 +12,22 @@ namespace MauiAVDApp2.Services
         {
             try
             {
-                var locations = await Geocoding.GetLocationsAsync(address);
+                IEnumerable<Location> locations = await Geocoding.GetLocationsAsync(address);
+                Location location = locations?.FirstOrDefault();
 
-                if (locations?.Any() == true)
+                if (location != null)
                 {
-                    var location = locations.First();
-                    return new GeocodeResult { Latitude = location.Latitude, Longitude = location.Longitude };
+                    return new GeocodeResult
+                    {
+                        Latitude = location.Latitude,
+                        Longitude = location.Longitude
+                    };
                 }
             }
             catch (FeatureNotSupportedException fnsEx)
             {
                 // Handle not supported on device exception
-                await App.Current.MainPage.DisplayAlert("Invalid device", "This device is not eligble for the locations feature. Use another device.", "OK");
+                await App.Current.MainPage.DisplayAlert("Invalid device", "This device is not eligible for the locations feature. Use another device.", "OK");
             }
             catch (Exception ex)
             {

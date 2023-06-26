@@ -2,6 +2,8 @@
 @using MauiAVDApp2.Services
 @using MauiAVDApp2.Models
 @inject IBoatService boatService
+@inject IJSRuntime jsRuntime
+@inject NavigationManager navigationManager
 
 <h1>Welcome to Boatshare!</h1>
 <small class="mb-3">Here are a list of all available boats.</small>
@@ -15,12 +17,10 @@ else
     <div class="container">
         <div class="row">
             <div class="col-12 mb-3 mt-3">
-                <a href="/map">
-                    <button class="btn btn-primary col-12">
-                        <i class="fa-solid fa-map-location-dot"></i>
-                        Show on map
-                    </button>
-                </a>
+                <a class="btn btn-primary col-12" href="/boatmap">
+                    <i class="fa-solid fa-map-location-dot"></i>
+                    Show on map
+                 </a>
             </div>
             @foreach (var boat in boats)
             {

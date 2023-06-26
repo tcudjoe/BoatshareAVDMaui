@@ -9,7 +9,7 @@ namespace MauiAVDApp2
             InitializeComponent();
 
             MainPage = new NavigationPage(new MainPage());
-            Routing.RegisterRoute("MapPage", typeof(MapPage));
+            Routing.RegisterRoute("mapPage", typeof(MapPage));
             Routing.RegisterRoute("BoatDetail", typeof(BoatDetail));
         }
     }

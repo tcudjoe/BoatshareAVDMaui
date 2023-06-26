@@ -1,0 +1,32 @@
+﻿@page "/boatmap"
+@using MauiAVDApp2.Models
+@using MauiAVDApp2.Services
+@inject IJSRuntime JSRuntime
+@inject IBoatService boatService
+
+<div id="map" style="height: 400px;"></div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await LoadMapAsync();
+        }
+    }
+
+    private async Task LoadMapAsync()
+    {
+        // Load the Google Maps API
+        await JSRuntime.InvokeVoidAsync("LoadGoogleMaps");
+
+        // Create the map
+        await JSRuntime.InvokeVoidAsync("CreateMap", "map");
+
+        // Add boat pins to the map
+        await JSRuntime.InvokeVoidAsync("AddBoatPins", boatService.GetAllBoats()); // Replace with your own boat data
+
+        // Handle pin clicks
+        await JSRuntime.InvokeVoidAsync("HandlePinClicks");
+    }
+}

@@ -10,12 +10,14 @@ namespace MauiAVDApp2
     public partial class MainPage : ContentPage
     {
         private IBoatService boatService;
+        private readonly IGeocodingService geocodingService;
         public ObservableCollection<Boat> Boats { get; set; }
 
         public MainPage()
         {
             InitializeComponent();
-            boatService = new BoatService(); // Instantiate the boat service (replace with your implementation)
+            boatService = new BoatService();
+            geocodingService = new GeocodingService(); 
             Boats = new ObservableCollection<Boat>();
             BindingContext = this;
         }
@@ -51,8 +53,8 @@ namespace MauiAVDApp2
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            // Navigate to the map page and pass the list of boats
-            Navigation.PushAsync(new MapPage(Boats.ToList()));
+            // Navigate to the map page and pass the list of boats and the geocoding service
+            Navigation.PushAsync(new MapPage(Boats.ToList(), geocodingService));
         }
     }
 }

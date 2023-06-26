@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "7wG6Ls9SuDg0/drovFlgbGF8sCoSYA2t7HH4l/q6T+A=",
+  "Hash": "Ns63Lkkrp8rfrB74icPKYIE+OlczFgZkVCeRv7/imtQ=",
   "Source": "MauiAVDApp2",
   "BasePath": "/",
   "Mode": "Root",
@@ -287,6 +287,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\TAOC\\source\\repos\\MauiAVDApp2\\MauiAVDApp2\\wwwroot\\map.js",
+      "SourceId": "MauiAVDApp2",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\TAOC\\source\\repos\\MauiAVDApp2\\MauiAVDApp2\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "map.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\map.js"
     }
   ]
 }
