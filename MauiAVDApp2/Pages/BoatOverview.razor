@@ -2,9 +2,10 @@
 @using MauiAVDApp2.Services
 @using MauiAVDApp2.Models
 @inject IBoatService boatService
+@inject NavigationManager NavigationManager
 
 <h1>Boat overview!</h1>
-<small class="mb-3">Here are a list of all available boats.</small>
+<small class="mb-3">Here is a list of all available boats.</small>
 
 @if (boats == null)
 {
@@ -37,7 +38,7 @@ else
 
                             <div class="row mt-3">
                                 <div class="col-6">
-                                    <button type="button" class="btn btn-info">
+                                    <button type="button" class="btn btn-info" @onclick="(() => EditBoat(boat.BoatId))">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                         Edit boat
                                     </button>
@@ -65,6 +66,12 @@ else
     {
         boats = await boatService.GetAllBoats();
     }
+
+    private void EditBoat(int boatId)
+    {
+        NavigationManager.NavigateTo($"/update-boat/{boatId}");
+    }
+
 
     private async void DeleteBoat(Boat boat)
     {

@@ -1,4 +1,4 @@
-﻿<!-- page "/update-boat{BoatId:Int}"
+﻿@page "/update-boat/{BoatId:int}"
 @using MauiAVDApp2.Services
 @using MauiAVDApp2.Models
 @inject IBoatService boatService
@@ -106,4 +106,4 @@
             await App.Current.MainPage.DisplayAlert("Boat was not updated", "Something went wrong, try again", "OK");
         }
     }
-} -->
+}
