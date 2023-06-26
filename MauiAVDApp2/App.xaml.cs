@@ -1,11 +1,16 @@
-﻿namespace MauiAVDApp2;
+﻿using MauiAVDApp2.Pages.Views;
 
-public partial class App : Application
+namespace MauiAVDApp2
 {
-	public App()
-	{
-		InitializeComponent();
+    public partial class App : Application
+    {
+        public App()
+        {
+            InitializeComponent();
 
-		MainPage = new MainPage();
-	}
+            MainPage = new NavigationPage(new MainPage());
+            Routing.RegisterRoute("mapPage", typeof(MapPage));
+            Routing.RegisterRoute("BoatDetail", typeof(BoatDetail));
+        }
+    }
 }
