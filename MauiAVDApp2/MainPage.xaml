@@ -5,7 +5,7 @@
              BackgroundColor="White">
 
 
-    <StackLayout>
+   <!-- <StackLayout>
         <Label Text="Welcome to Boatshare!" TextColor="Black" Margin="0,20,0,20" HorizontalOptions="Center" VerticalOptions="Center" />
         <Button Text="Show on map" BackgroundColor="#d2a71a" WidthRequest="350" Margin="0,0,0,20" HorizontalOptions="Center" Clicked="Button_Clicked" />
 
@@ -33,12 +33,12 @@
             </CollectionView>
         </ScrollView>
     </StackLayout> 
-    
+    -->
 
-  <!--   <BlazorWebView HostPage="wwwroot/index.html">
+     <BlazorWebView HostPage="wwwroot/index.html">
        <BlazorWebView.RootComponents>
            <RootComponent Selector="#app" ComponentType="{x:Type local:Main}" />
        </BlazorWebView.RootComponents>
     </BlazorWebView>
--->
+
 </ContentPage>
