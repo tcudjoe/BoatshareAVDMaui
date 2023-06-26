@@ -9,7 +9,11 @@
   <uses-sdk android:minSdkVersion="24" android:targetSdkVersion="31" />
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <application android:allowBackup="true" android:icon="@mipmap/appicon" android:roundIcon="@mipmap/appicon_round" android:supportsRtl="true" android:name="crc64004f69c4ae2d03bc.MainApplication" android:label="MauiAVDApp2" android:debuggable="true" android:extractNativeLibs="true">
+    <meta-data android:name="com.google.android.geo.API_KEY" android:value="AIzaSyCT7Drg7-0cLPWId5AErlvqztMxocDx6UM" />
     <activity android:configChanges="density|orientation|smallestScreenSize|screenLayout|screenSize|uiMode" android:theme="@style/Maui.SplashTheme" android:name="crc64004f69c4ae2d03bc.MainActivity" android:exported="true">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />

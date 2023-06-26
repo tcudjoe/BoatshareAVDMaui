@@ -161,6 +161,8 @@ C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\andr
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.Compatibility.dll
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.Compatibility.pdb
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.dll
+C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.Maps.dll
+C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.Maps.pdb
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.pdb
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.Xaml.dll
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Controls.Xaml.pdb
@@ -169,6 +171,8 @@ C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\andr
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Essentials.pdb
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Graphics.dll
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Graphics.pdb
+C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Maps.dll
+C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.Maps.pdb
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.Maui.pdb
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.VisualBasic.Core.dll
 C:\Users\TAOC\source\repos\MauiAVDApp2\MauiAVDApp2\obj\Debug\net6.0-android\android\assets\Microsoft.VisualBasic.dll

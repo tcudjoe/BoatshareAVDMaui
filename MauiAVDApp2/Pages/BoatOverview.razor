@@ -1,24 +1,89 @@
-﻿@page "/boat_overview"
-<h3>Boat Overview</h3>
+﻿@page "/boat-overview"
+@using MauiAVDApp2.Services
+@using MauiAVDApp2.Models
+@inject IBoatService boatService
+@inject NavigationManager NavigationManager
 
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <a class="btn btn-primary d-block mb-3" href="add-boat">Add Boat</a>
-            <div class="card">
-                <img src="..." style="float:left" class="card-img-top" alt="...">
-                <div class="card-body" style="float: right">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="#" class="oi oi-action-redo"> Edit Boat</a>
-                    <br />
-                    <a href="#" class="oi oi-delete">Delete boat</a>
-                </div>
+<h1>Boat overview!</h1>
+<small class="mb-3">Here is a list of all available boats.</small>
+
+@if (boats == null)
+{
+    <p><em>Loading boats...</em></p>
+}
+else
+{
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mt-3">
+                <a href="/add-boat">
+                    <button class="btn btn-primary col-12 mb-3" type="button">Add boat</button>
+                </a>
             </div>
+            @foreach (var boat in boats)
+            {
+                <div class="col-12 mb-3">
+                    <div class="card">
+                        <img src="@boat.BoatImage" style="float:left" class="card-img-top" alt="@boat.BoatName">
+                        <div class="card-body" style="float: right">
+                            <h5 class="card-title mb-3">@boat.BoatName</h5>
+                            <p class="card-text">@boat.BoatType.ToString()</p>
+                            <p class="card-text">
+                                <i class="fa-solid fa-location-dot"></i>@boat.BoatCity
+                                <i class="fa-solid fa-users"></i>@boat.BoatSeats
+                                <i class="fa-solid fa-euro-sign"></i>@boat.BoatPrice
+                            </p>
+                            <p class="card-text">@boat.BoatLatitude</p>
+                            <p class="card-text">@boat.BoatLongitude</p>
+
+                            <div class="row mt-3">
+                                <div class="col-6">
+                                    <button type="button" class="btn btn-info" @onclick="(() => EditBoat(boat.BoatId))">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                        Edit boat
+                                    </button>
+                                </div>
+                                <div class="col-6">
+                                    <button type="submit" @onclick="(() => DeleteBoat(boat))" class="btn btn-danger">
+                                        <i class="fa-solid fa-trash"></i>
+                                        Delete boat
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
         </div>
     </div>
-</div>
+}
+
 
 @code {
+    private List<Boat> boats;
 
+    protected override async Task OnInitializedAsync()
+    {
+        boats = await boatService.GetAllBoats();
+    }
+
+    private void EditBoat(int boatId)
+    {
+        NavigationManager.NavigateTo($"/update-boat/{boatId}");
+    }
+
+
+    private async void DeleteBoat(Boat boat)
+    {
+        bool confirm = await App.Current.MainPage.DisplayAlert("Confirmation", "Are you sure you want to delete this boat?", "Yes", "No");
+        if (confirm)
+        {
+            var response = await boatService.DeleteBoat(boat);
+            if (response > 0)
+            {
+                await OnInitializedAsync();
+                this.StateHasChanged();
+            }
+        }
+    }
 }

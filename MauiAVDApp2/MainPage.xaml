@@ -1,14 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:MauiAVDApp2"
              x:Class="MauiAVDApp2.MainPage"
-             BackgroundColor="{DynamicResource PageBackgroundColor}">
+             BackgroundColor="White">
 
-    <BlazorWebView HostPage="wwwroot/index.html">
-        <BlazorWebView.RootComponents>
-            <RootComponent Selector="#app" ComponentType="{x:Type local:Main}" />
-        </BlazorWebView.RootComponents>
+
+   <!-- <StackLayout>
+        <Label Text="Welcome to Boatshare!" TextColor="Black" Margin="0,20,0,20" HorizontalOptions="Center" VerticalOptions="Center" />
+        <Button Text="Show on map" BackgroundColor="#d2a71a" WidthRequest="350" Margin="0,0,0,20" HorizontalOptions="Center" Clicked="Button_Clicked" />
+
+
+        <ScrollView>
+            <CollectionView ItemsSource="{Binding Boats}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <ContentView Margin="10, 20, 10, 20">
+                            <Frame BorderColor="#1A45D2" Padding="2">
+                                <StackLayout x:Name="collectionView" Margin="10, 20, 10, 20">
+                                    <Image Source="{Binding BoatImage}" Aspect="AspectFill" WidthRequest="500" HeightRequest="250"/>
+                                    <Label Text="{Binding BoatName}" />
+                                    <Label Text="{Binding BoatType}" />
+                                    <Label Text="{Binding BoatSeats}" />
+                                    <Label Text="{Binding BoatPrice}" />
+                                    <Label Text="{Binding BoatDescription}" />
+                                    <Label Text="{Binding BoatManufacturer}" />
+                                    <Label Text="{Binding BoatModel}" />
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </StackLayout> 
+    -->
+
+     <BlazorWebView HostPage="wwwroot/index.html">
+       <BlazorWebView.RootComponents>
+           <RootComponent Selector="#app" ComponentType="{x:Type local:Main}" />
+       </BlazorWebView.RootComponents>
     </BlazorWebView>
 
 </ContentPage>

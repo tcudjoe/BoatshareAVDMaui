@@ -2,6 +2,7 @@
 @using MauiAVDApp2.Services
 @using MauiAVDApp2.Models
 @inject IBoatService boatService
+@inject IGeocodingService geocodingService
 
 <h3>Add Boat</h3>
 
@@ -76,16 +77,32 @@
 @code {
     Boat boat = new Boat();
 
-    private async void FormSubmit()
+    private async Task FormSubmit()
     {
         var response = await boatService.AddBoat(boat);
+        var geocodeResult = await geocodingService.GeocodeAddress(boat.BoatCity);
+
         if (response > 0)
         {
-            boat.BoatSeats = 0;
-            boat.BoatPrice = 0.00;
+            if (geocodeResult != null)
+            {
+                boat.BoatLatitude = geocodeResult.Latitude;
+                boat.BoatLongitude = geocodeResult.Longitude;
+            }
+            else
+            {
+                // Handle the case when geocoding fails or no result is obtained
+                // For example, you can display an error message or take appropriate action
+                await App.Current.MainPage.DisplayAlert("Geocoding Failed", "Unable to retrieve latitude and longitude for the specified address.", "OK");
+                return;
+            }
+
+            boat.BoatSeats = 3;
+            boat.BoatPrice = 3.00;
             boat.BoatWithLicense = boat.BoatWithSkipper = false;
             boat.BoatCity = boat.BoatManufacturer = boat.BoatImage = boat.BoatDescription = boat.BoatModel = boat.BoatName = string.Empty;
-            await App.Current.MainPage.DisplayAlert("form submit invoked", "form submitted", "OK");
+            this.StateHasChanged();
+            await App.Current.MainPage.DisplayAlert("Success", "Boat was successfully added", "OK");
         }
         else
         {

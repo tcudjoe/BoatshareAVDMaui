@@ -10,7 +10,7 @@ namespace MauiAVDApp2.Models
     public class Boat
     {
         [PrimaryKey, AutoIncrement]
-        public int? BoatId { get; set; }
+        public int BoatId { get; set; }
         public string? BoatName { get; set; }
         public string? BoatDescription { get; set; }
         public string? BoatCity { get; set; }
@@ -22,9 +22,8 @@ namespace MauiAVDApp2.Models
         public double? BoatPrice { get; set; }
         public Boolean? BoatWithSkipper { get; set; }
         public Boolean? BoatWithLicense { get; set; }
-        public double? BoatLatitude { get; set; }
-        public double? BoatLongitude { get; set; }
+        public double BoatLatitude { get; set; }
+        public double BoatLongitude { get; set; }
         public double? BoatDistance { get; set; }
-        //public Host BoatHost { get; set; }
     }
 }
